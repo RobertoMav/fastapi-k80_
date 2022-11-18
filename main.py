@@ -28,7 +28,7 @@ def create_data(data: schemas.DataCreate, db: Session = Depends(get_db)):
     return crud.create_data(db, data=data)
 
 
-@app.get("/data/", response_model=list[schemas.Data])
+@app.get("/data/", response_model=List[schemas.Data])
 def read_all_data(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     data = crud.get_all_data(db, skip=skip, limit=limit)
     return data
