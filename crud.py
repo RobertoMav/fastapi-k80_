@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from . import models, schemas
+import models, schemas
 
 def get_data(db: Session, image_name: str):
     return db.query(models.Data).filter(models.Data.image == image_name).first()
